@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    
+    <input type="button" value="Ausgeben" onclick="ausgabe()">
+    <label for="textfeld">Eingabe:</label>
+    <input type="text" id="textfeld" name="textfeld">
+    <nav>
+        <ul id="meineUL">
+            <li>list item</li>
+            <li>list item</li>
+
+    </nav>
+
+    <script>
+        function ausgabe() {
+        
+        var eingabeWert = document.getElementById("textfeld").value;
+        var liste = document.getElementById("meineUL");
+                var listItem = document.createElement("li");
+                listItem.textContent = eingabeWert;
+                liste.appendChild(listItem);
+
+
+
+        
+        }
+
+    </script>
+
+</body>
+</html>
