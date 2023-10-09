@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="startButton">Start</button>
+    <p id="output"></p>
+
+    <script>
+       
+        function throwError(param) {
+            if (param === 0) {
+                throw new Error('Parameter ist gleich 0');
+            }
+            console.log('Funktion wurde erfolgreich aufgerufen mit Parameter: ' + param);
+        }
+
+      
+        function runProgram() {
+            let outputText = '';
+
+            for (let i = 0; i < 15; i++) {
+                try {
+                    
+                    const randomParam = Math.floor(Math.random() * 21);
+                    throwError(randomParam);
+                    outputText += `Aufruf ${i + 1}: Erfolgreich mit Parameter ${randomParam}<br>`;
+                } catch (error) {
+                    outputText += `Aufruf ${i + 1}: Exception aufgetreten - ${error.message}<br>`;
+                }
+            }
+
+            
+            document.getElementById('output').innerHTML = outputText;
+        }
+
+      
+        document.getElementById('startButton').addEventListener('click', runProgram);
+    </script>
+
+   
+</body>
+</html>
