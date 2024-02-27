@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket Automat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Ticket Automat</h1>
+    <div class="form-control">
+      <label for="einwerfenBetrag">Geld einwerfen:</label>
+      <input type="number" id="einwerfenBetrag" placeholder="Betrag in €">
+      <button type="button" id="einwerfenButton">Einwurf</button>
+    </div>
+    <div class="form-control">
+      <label for="ziel">Ziel einstellen:</label>
+      <select id="ziel" name="ziel">
+        <option value="Salzburg">Salzburg</option>
+        <option value="Innsbruck">Innsbruck</option>
+        <option value="Klagenfurt">Klagenfurt</option>
+        <option value="Graz">Graz</option>
+        <option value="Bregenz">Bregenz</option>
+      </select>
+    </div>
+    <div class="form-control">
+      <label for="anzahlPersonen">Anzahl Personen:</label>
+      <input type="number" id="anzahlPersonen" placeholder="1-10" min="1" max="10">
+    </div>
+    <div class="info-display">
+      <span>Fahrpreis: <span id="fahrpreis">-</span>€</span>
+      <span>Guthaben: <span id="guthaben">0</span>€</span>
+      <span>Gesamte Einnahmen: <span id="einnahmen">0</span>€</span>
+    </div>
+    <div class="ticket-ausgabe">
+      <span>Ticketausgabe:</span>
+      <pre id="ticketAusgabe">Noch keine Ausgabe</pre>
+    </div>
+    <button onclick="ticketKaufenClickHandler()">Ticket kaufen</button>
+    <button type="button" onclick="reset()">Neuer Kunde</button>
+  </div>
+  <script src="app.js" defer></script>
+</body>
+
+</html>
